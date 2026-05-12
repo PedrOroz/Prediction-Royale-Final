@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Battle Royale Dark Theme */
+    /* Background #161b1d → hsl(195 14% 10%) */
+    --background: 195 14% 10%;
+    --foreground: 195 10% 88%;
+
+    /* Surface #2d3639 → hsl(195 10% 20%) */
+    --card: 195 10% 20%;
+    --card-foreground: 195 10% 88%;
+
+    --popover: 195 10% 15%;
+    --popover-foreground: 195 10% 88%;
+
+    /* Action #3696c9 → hsl(202 55% 50%) */
+    --primary: 202 55% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Surface darker */
+    --secondary: 195 10% 16%;
+    --secondary-foreground: 195 10% 78%;
+
+    --muted: 195 10% 24%;
+    --muted-foreground: 195 12% 55%;
+
+    --accent: 195 10% 24%;
+    --accent-foreground: 195 10% 88%;
+
+    /* Destructive for eliminations */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border #3c5d53 → hsl(158 21% 30%) */
+    --border: 158 21% 30%;
+    --input: 195 10% 24%;
+    --ring: 202 55% 50%;
+
+    --radius: 0.5rem;
+
+    /* Life-on #f2ff00 → hsl(65 100% 50%) */
+    --life-on: 65 100% 50%;
+    /* Life-off #5a6b72 → hsl(198 11% 40%) */
+    --life-off: 198 11% 40%;
+    /* Claim #f9a339 → hsl(34 94% 60%) */
+    --claim: 34 94% 60%;
+    /* Surface elevated */
+    --surface: 195 10% 20%;
+    --surface-elevated: 195 10% 24%;
+
+    --sidebar-background: 195 14% 10%;
+    --sidebar-foreground: 195 10% 88%;
+    --sidebar-primary: 202 55% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 10% 24%;
+    --sidebar-accent-foreground: 195 10% 88%;
+    --sidebar-border: 158 21% 30%;
+    --sidebar-ring: 202 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom utility classes */
+@layer components {
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .bg-surface {
+    background-color: hsl(var(--surface));
+  }
+
+  .bg-surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+
+  .text-life-on {
+    color: hsl(var(--life-on));
+  }
+
+  .text-life-off {
+    color: hsl(var(--life-off));
+  }
+
+  .bg-life-on {
+    background-color: hsl(var(--life-on));
+  }
+
+  .bg-life-off {
+    background-color: hsl(var(--life-off));
+  }
+
+  .text-claim {
+    color: hsl(var(--claim));
+  }
+
+  .bg-claim {
+    background-color: hsl(var(--claim));
+  }
+
+  .border-game {
+    border-color: hsl(var(--border));
+  }
+
+  /* Wallet button overrides */
+  .wallet-adapter-button-trigger {
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+    border-radius: var(--radius) !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    height: 40px !important;
+    padding: 0 16px !important;
+    transition: opacity 0.15s ease !important;
+  }
+
+  .wallet-adapter-button-trigger:hover {
+    opacity: 0.85 !important;
+  }
+
+  .wallet-adapter-button {
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+    border-radius: var(--radius) !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    height: 40px !important;
+  }
+
+  .wallet-adapter-button:hover {
+    opacity: 0.85 !important;
+    background-color: hsl(var(--primary)) !important;
+  }
+
+  .wallet-adapter-modal-wrapper {
+    background-color: hsl(var(--card)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 12px !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+  }
+
+  .wallet-adapter-modal-title {
+    color: hsl(var(--foreground)) !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+  }
+
+  .wallet-adapter-modal-list li {
+    background-color: hsl(var(--surface-elevated)) !important;
+    border-radius: var(--radius) !important;
+  }
+
+  .wallet-adapter-modal-list li:hover {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  .wallet-adapter-modal-button-close {
+    background-color: hsl(var(--surface-elevated)) !important;
+  }
+
+  .wallet-adapter-modal-overlay {
+    background-color: hsla(195, 14%, 5%, 0.85) !important;
+  }
+}
